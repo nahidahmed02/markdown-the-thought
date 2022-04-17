@@ -19,7 +19,16 @@ const Blogs = () => {
             <p className='Q-A'>A: I use Firebase because it has all the features that helped me to grow my apps. Firebase is less technical and time-saving. Besides Firebase we also have 'React Firebase Hooks', 'Certificate-based authentication' etc to implement authentication.
             </p>
 
-
+            <h2 className='Q-A mt-5'>Q: What other services does firebase provide other than authentication?</h2>
+            <p className='Q-A'>A: Services that Firebase provides other than authentication are:
+                <li>Hosting</li>
+                <li>Google Analytics
+                </li>
+                <li>Cloud Storage
+                </li>
+                <li>Cloud Functions
+                </li>
+            </p>
         </div>
     );
 };
