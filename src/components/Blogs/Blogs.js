@@ -15,6 +15,10 @@ const Blogs = () => {
                 3. Users are validated in authorization; while in authentication, users are verified.
             </p>
 
+            <h2 className='Q-A mt-5'>Q: Why are you using firebase? What other options do you have to implement authentication?</h2>
+            <p className='Q-A'>A: I use Firebase because it has all the features that helped me to grow my apps. Firebase is less technical and time-saving. Besides Firebase we also have 'React Firebase Hooks', 'Certificate-based authentication' etc to implement authentication.
+            </p>
+
 
         </div>
     );
