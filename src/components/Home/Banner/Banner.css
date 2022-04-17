@@ -1,0 +1,27 @@
+.banner {
+    background-image: url('../../../images/banner.jpg');
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-size: cover;
+}
+
+.banner-title {
+    color: orange;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.713);
+}
+
+.banner-description {
+    color: white;
+    font-size: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.713);
+}
