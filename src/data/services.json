@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "Autobiography",
+        "description": "If you want yours real incidents brought together in a book which is a account of your complete life.",
+        "price": "$300",
+        "photo": "../images/autobiography.jpeg"
+    },
+    {
+        "id": "2",
+        "name": "Guest Posting",
+        "description": "Blogs on sites attract more traffic and customers. I can help you by adding blogs full of informative content in your sites.",
+        "price": "$100",
+        "photo": "../images/guest posting.jpeg"
+    },
+    {
+        "id": "3",
+        "name": "Online Course Content",
+        "description": "Online courses are a hot commodity right now. I can help you by creating your online course content.",
+        "price": "$120",
+        "photo": "../images/Online Course Content.jpeg"
+    }
+]
