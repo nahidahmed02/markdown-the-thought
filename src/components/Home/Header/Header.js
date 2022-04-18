@@ -21,9 +21,7 @@ const Header = () => {
                             <li className="nav-item">
                                 <CustomLink to='/about'>About</CustomLink>
                             </li>
-                            <li className="nav-item">
-                                <CustomLink to='/signup'>Sign Up</CustomLink>
-                            </li>
+
                             <li className="nav-item">
                                 <CustomLink to='/login'>Login</CustomLink>
                             </li>

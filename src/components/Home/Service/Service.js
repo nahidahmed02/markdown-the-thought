@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Service = ({ service }) => {
     const { photo, name, description, price } = service;
+
+    const navigate = useNavigate(auth);
+
     return (
         <div className="col">
             <div className="card h-100">
@@ -12,7 +17,7 @@ const Service = ({ service }) => {
                     <small>Price: {price}</small>
                     <br />
                     <div className='text-center mt-2'>
-                        <button className='btn btn-outline-dark'>Proceed Checkout</button>
+                        <button onClick={() => navigate('/checkout')} className='btn btn-outline-dark'>Proceed Checkout</button>
                     </div>
                 </div>
             </div>
