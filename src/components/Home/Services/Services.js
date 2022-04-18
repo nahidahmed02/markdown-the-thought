@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Service from '../Service/Service';
 import './Services.css'
 
+// to get all the services
 const Services = () => {
     const [services, setServices] = useState([]);
 

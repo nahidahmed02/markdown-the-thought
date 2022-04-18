@@ -3,6 +3,8 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Login.css';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import Toast from '../Toast/Toast';
 
 
 const Login = () => {
@@ -23,7 +25,7 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-
+    // get the email,password and submit
     const handleEmailBlur = event => {
         setEmail(event.target.value);
     }
@@ -36,6 +38,14 @@ const Login = () => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
     }
+    // forgot password
+    const resetPassword = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                return <Toast></Toast>
+            })
+    }
+
     return (
         <div>
             <h2 className='mt-4 text-center'>Login</h2>
@@ -51,6 +61,9 @@ const Login = () => {
                 <div style={{ color: 'red' }}>{error?.message}</div>
                 <div className='text-center d-grid'>
                     <button type="submit" className="btn btn-outline-dark">Login</button>
+                </div>
+                <div className='text-center'>
+                    <button onClick={resetPassword} className='btn btn-link'>Forgot Password</button>
                 </div>
             </form>
             <p className='text-center mt-2'>

@@ -13,8 +13,10 @@ const Signup = () => {
 
     const navigate = useNavigate();
 
+    // login with email and password
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+    // login with google
     const [signInWithGoogle, googleUser, error] = useSignInWithGoogle(auth);
 
     const handleEmailBlur = event => {

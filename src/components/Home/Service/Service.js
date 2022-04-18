@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
+// show individual the services
+
 const Service = ({ service }) => {
     const { photo, name, description, price } = service;
 
