@@ -1,8 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Login.css';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 
 const Login = () => {
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
     return (
         <div>
             <h2 className='mt-4 text-center'>Login</h2>

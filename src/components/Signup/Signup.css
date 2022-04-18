@@ -1,0 +1,11 @@
+.lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    border: 1px solid rgba(149, 160, 167, 1);
+    width: 145px;
+    margin: 15px;
+}
