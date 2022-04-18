@@ -10,6 +10,10 @@ const Service = ({ service }) => {
                     <h5 className="card-title">Name: {name}</h5>
                     <p className="card-text">{description}</p>
                     <small>Price: {price}</small>
+                    <br />
+                    <div className='text-center mt-2'>
+                        <button className='btn btn-outline-dark'>Proceed Checkout</button>
+                    </div>
                 </div>
             </div>
         </div>
