@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Login.css';
 import auth from '../../firebase.init';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 
 const Login = () => {
 
-    const [user] = useAuthState(auth);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        error
+    ] = useSignInWithEmailAndPassword(auth);
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -15,18 +23,32 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+
+    const handleEmailBlur = event => {
+        setEmail(event.target.value);
+    }
+
+    const handlePasswordBlur = event => {
+        setPassword(event.target.value);
+    }
+
+    const handleUserSignIn = event => {
+        event.preventDefault();
+        signInWithEmailAndPassword(email, password);
+    }
     return (
         <div>
             <h2 className='mt-4 text-center'>Login</h2>
-            <form className='w-25 mx-auto'>
+            <form onSubmit={handleUserSignIn} className='w-25 mx-auto'>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                    <input onBlur={handleEmailBlur} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" required />
+                    <input onBlur={handlePasswordBlur} type="password" className="form-control" id="exampleInputPassword1" required />
                 </div>
+                <div style={{ color: 'red' }}>{error?.message}</div>
                 <div className='text-center d-grid'>
                     <button type="submit" className="btn btn-outline-dark">Login</button>
                 </div>
