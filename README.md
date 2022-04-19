@@ -1,6 +1,6 @@
 # Markdown The Thought
 
-[Live Site Link](https://markdown-the-thought.web.app/login)
+[Live Site Link](https://markdown-the-thought.web.app/)
 
 ### feature and functionality
 * a writer's website
