@@ -4,9 +4,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import CustomLink from '../../CustomLink/CustomLink';
 
+// navbar
 const Header = () => {
     const [user] = useAuthState(auth);
 
+    // logout button
     const handleLogOut = () => {
         signOut(auth);
     }
@@ -30,6 +32,7 @@ const Header = () => {
                                 <CustomLink to='/about'>About</CustomLink>
                             </li>
 
+                            {/* dynamic login and logout button */}
                             <li className="nav-item">
                                 {
                                     user ?

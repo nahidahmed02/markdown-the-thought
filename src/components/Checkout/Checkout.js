@@ -1,5 +1,6 @@
 import React from 'react';
 
+// after click 'proceed checkout' button
 const Checkout = () => {
     return (
         <div className='container my-3'>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// about me and my goal
 const About = () => {
     return (
         <div className='container mt-5'>

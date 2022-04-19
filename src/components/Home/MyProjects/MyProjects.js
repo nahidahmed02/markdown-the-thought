@@ -3,6 +3,7 @@ import project1 from '../../../images/project1.jpg';
 import project2 from '../../../images/project2.jpg';
 import project3 from '../../../images/project3.jpg';
 
+// extra section
 const MyProjects = () => {
     return (
         <div className='container'>

@@ -13,12 +13,13 @@ const Signup = () => {
 
     const navigate = useNavigate();
 
-    // login with email and password
+    // signup with email and password
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-    // login with google
+    // signup with google
     const [signInWithGoogle, googleUser, error] = useSignInWithGoogle(auth);
 
+    // set email,password and confirm password
     const handleEmailBlur = event => {
         setEmail(event.target.value);
     }
@@ -30,11 +31,11 @@ const Signup = () => {
     const handleConfirmPasswordBlur = event => {
         setConfirmPassword(event.target.value);
     }
-
+    // navigate the users
     if (user || googleUser) {
         navigate('/')
     }
-
+    // form submission
     const handleCreateUser = event => {
         event.preventDefault();
         if (password !== confirmPassword) {
@@ -48,7 +49,7 @@ const Signup = () => {
 
         createUserWithEmailAndPassword(email, password);
     }
-
+    // error handling
     let errorElement;
     if (error) {
         errorElement = (
@@ -88,6 +89,7 @@ const Signup = () => {
                 <div className='line'></div>
             </div>
             <div>{errorElement}</div>
+            {/* gooogle signup button */}
             <div className='text-center'>
                 <button onClick={() => signInWithGoogle()} type="submit" className="btn btn-outline-dark">Sign Up with Google</button>
             </div>
