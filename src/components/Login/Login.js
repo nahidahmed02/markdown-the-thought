@@ -4,9 +4,11 @@ import './Login.css';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { sendPasswordResetEmail } from 'firebase/auth';
-import Toast from '../Toast/Toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
+// login with email and password
 const Login = () => {
 
     const [email, setEmail] = useState('');
@@ -15,10 +17,12 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        error
+        loading,
+        error,
     ] = useSignInWithEmailAndPassword(auth);
 
     const navigate = useNavigate();
+
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
@@ -42,7 +46,7 @@ const Login = () => {
     const resetPassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                return <Toast></Toast>
+                toast('Email sent')
             })
     }
 
@@ -58,7 +62,12 @@ const Login = () => {
                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                     <input onBlur={handlePasswordBlur} type="password" className="form-control" id="exampleInputPassword1" required />
                 </div>
-                <div style={{ color: 'red' }}>{error?.message}</div>
+
+                <p style={{ color: 'red' }}>{error?.message}</p>
+                {
+                    loading && <p>please wait...</p>
+                }
+
                 <div className='text-center d-grid'>
                     <button type="submit" className="btn btn-outline-dark">Login</button>
                 </div>
@@ -69,6 +78,7 @@ const Login = () => {
             <p className='text-center mt-2'>
                 Don't have an account?  <Link to='/signup' className='form-link'>Create an account</Link>
             </p>
+            <ToastContainer />
         </div>
     );
 };
