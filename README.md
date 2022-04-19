@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### feature and functionality
 * a writer's website
 * showing services
-* showing previous projects
+* email verification
 * google sign up
 * email-password authentication
 
@@ -15,3 +15,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * react
 * react firebase hooks
 * react router
+* react toast
