@@ -1,6 +1,6 @@
 # Markdown The Thought
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Site Link](https://markdown-the-thought.web.app/login)
 
 ### feature and functionality
 * a writer's website
